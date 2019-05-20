@@ -14,6 +14,10 @@
 HX711 balanca;                // define instancia balança HX711
  
 float calibration_factor = 42130;   // fator de calibração aferido na Calibraçao 
+float currentWeight = 0.0;
+float emptyWeight = 14.0;
+float filledWeight = 34.0;
+float limiar = 0.5;
  
 void setup() {
   Serial.begin(9600);
@@ -25,10 +29,20 @@ void setup() {
 }
  
 void loop() {
+  currentWeight = balanca.get_units();
+  
   Serial.print("Peso: ");   // imprime no monitor serial
-  Serial.print(balanca.get_units(), 3);   // imprime peso na balança com 3 casas decimais 
+  Serial.print(currentWeight, 3);   // imprime peso na balança com 3 casas decimais 
   Serial.println(" kg");   // imprime no monitor serial 
+
+  if(currentWeight - limiar <= emptyWeight) {
+    Serial.println("empty\n");
+  }
+
+  Serial.println(currentWeight/filledWeight);
+  
   delay(500) ;   // atraso de 0,5 segundos 
+  
   if (Serial.available()) {   // se a serial estiver disponivel
      char temp = Serial.read();   // le carcter da serial 
    
