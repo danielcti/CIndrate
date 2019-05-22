@@ -1,4 +1,4 @@
-#Tue May 21 22:42:07 BRT 2019
+#Wed May 22 00:37:37 BRT 2019
 base.0=/home/dpc2/Documentos/CIndrate/App/android/app/build/intermediates/transforms/dexMerger/debug/0
 path.0=classes.dex
 renamed.0=classes.dex
