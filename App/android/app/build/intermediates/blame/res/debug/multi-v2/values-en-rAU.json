@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/dpc2/Documentos/UFPE/ESS/CIndrata/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-en-rAU/values-en-rAU.xml",
+            "outputFile": "/home/dpc2/Documentos/CIndrate/App/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-en-rAU/values-en-rAU.xml",
             "map": [
                 {
                     "source": "/home/dpc2/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/31011375be05104bbcadb2758f7822f1/res/values-en-rAU/values-en-rAU.xml",
