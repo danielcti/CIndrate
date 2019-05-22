@@ -36,11 +36,11 @@ export default class Filtro extends Component {
         <View>
         <Text style={styles.info}>Bloco {filtro.bloco} - Andar {filtro.andar}: {filtro.nivelAgua}%</Text>
         {!filtro.solicitou && <TouchableOpacity onPress={() => this.onPress(filtro)}>
-            <View style={styles.button}>
-                <Text style={styles.troca}>Solicitar troca</Text>
+            <View style={styles.trocaButton}>
+                <Text style={styles.trocaTexto}>Solicitar troca</Text>
             </View>
         </TouchableOpacity>}
-        {filtro.solicitou && <Text style={styles.troca}>Troca já foi solicitada, favor aguardar</Text>}
+        {filtro.solicitou && <Text style={styles.trocaTexto}>Troca já foi solicitada, favor aguardar</Text>}
         </View>
 
     );
@@ -58,11 +58,11 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 18
     },
-    troca: {
+    trocaTexto: {
         fontSize:20,
         padding: 10,
     },
-    button: {
+    trocaButton: {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',

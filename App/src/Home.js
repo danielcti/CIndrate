@@ -21,7 +21,6 @@ export default class Home extends Component {
     super(props)
     
     this.onPress = this.onPress.bind(this)
-    this.onPressTroca = this.onPressTroca.bind(this)
     this.state = {
       data: [
           { id: 0, bloco: 'E', andar: 1, nivelAgua: 70, solicitou: false},
@@ -30,7 +29,6 @@ export default class Home extends Component {
           { id: 3, bloco: 'D', andar: 1, nivelAgua: 20, solicitou: false},
           { id: 4, bloco: 'D', andar: 2, nivelAgua: 5, solicitou: false},
       ],
-      changePage: false,
 
   };
   }
@@ -39,23 +37,7 @@ export default class Home extends Component {
     // ir para a pagina do filtro escolhido
         console.log(data)
         const id = data.id
-        this.props.navigation.navigate('Filtro',this.state.data[id])
-        // this.setState({changePage: !this.state.changePage})
-    }
-    
-    onPressTroca = (id) => {
-        console.log(id)
-        // manda pra nuvem
-        this.state.data.map((filtro) => {
-            filtros = this.state.data
-            if(id === filtro.id){
-                console.log('troca')
-                const atualizado = filtro
-                atualizado.solicitou = true
-                filtros[id] = atualizado
-                this.setState({data:filtros})
-            }
-        })
+        this.props.navigation.navigate('Filtro',this.state.data[id]) //passa como parametro o id do filtro
     }
 
   renderItem = ({ item }) => (
@@ -87,19 +69,18 @@ export default class Home extends Component {
 }
 
 const styles = StyleSheet.create({
-  list: {
-		paddingHorizontal: 10,
-  },
+    list: {
+        paddingHorizontal: 10,
+    },
 
-  listItem: {
-    backgroundColor: '#EEE',
-    marginTop: 10,
-    padding: 20,
-    flexDirection: 'row',
-	},
-	info:{
-		fontSize:30,
-		// paddingLeft: 140 
+    listItem: {
+        backgroundColor: '#EEE',
+        marginTop: 10,
+        padding: 20,
+        flexDirection: 'row',
+    },
+    info:{
+        fontSize:30,
     },
     troca:{
         fontSize:20,
@@ -111,5 +92,5 @@ const styles = StyleSheet.create({
     },
     trocaSolicitada: {
         // flexDirection: 'column',
-    }
+}
 });
