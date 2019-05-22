@@ -34,9 +34,11 @@ export default class Filtro extends Component {
       const filtro = this.props.navigation.state.params
     return (
         <View>
-        <Text style={styles.info}>Bloco {filtro.bloco} - Andar {filtro.andar}: {filtro.nivelAgua}</Text>
+        <Text style={styles.info}>Bloco {filtro.bloco} - Andar {filtro.andar}: {filtro.nivelAgua}%</Text>
         {!filtro.solicitou && <TouchableOpacity onPress={() => this.onPress(filtro)}>
-         <Text style={styles.troca}>solicitar troca</Text>
+            <View style={styles.button}>
+                <Text style={styles.troca}>Solicitar troca</Text>
+            </View>
         </TouchableOpacity>}
         {filtro.solicitou && <Text style={styles.troca}>Troca já foi solicitada, favor aguardar</Text>}
         </View>
@@ -47,13 +49,28 @@ export default class Filtro extends Component {
 
 const styles = StyleSheet.create({
     info: {
+        borderRadius: 5,
+        margin: 10,
         backgroundColor: '#EEE',
         marginTop: 10,
         padding: 20,
-        flexDirection: 'row',
+        textAlign: 'center',
+        fontWeight: 'bold',
+        fontSize: 18
     },
     troca: {
         fontSize:20,
-        padding: 15
-    }
+        padding: 10,
+    },
+    button: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginVertical: 10,
+        marginHorizontal: 70,
+        paddingHorizontal: 10,
+        paddingVertical: 7,
+        borderRadius: 5,
+        backgroundColor: "#AEDEF4",
+      },
 });
