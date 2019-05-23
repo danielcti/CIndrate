@@ -11,9 +11,12 @@ export default class Home extends Component {
         },
         headerTintColor: '#fff',
         headerTitleStyle: {
-          fontWeight: 'bold',
-          flexGrow:1,
-          alignSelf:'center',
+            fontWeight: 'normal',
+            flexGrow:1,
+            alignSelf:'center',
+            fontFamily: 'Potra',
+            fontSize: 34
+
         },
       };
        
@@ -95,5 +98,6 @@ const styles = StyleSheet.create({
     textoFiltro: {
         fontWeight: 'bold',
         fontSize: 18,
+        // fontFamily: 'stibold'
     }
 });

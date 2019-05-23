@@ -41,6 +41,9 @@
 		ED2971652150620600B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2971642150620600B7C4FE /* JavaScriptCore.framework */; };
 		0C95DBC63974454584A82C25 /* libRNGestureHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7544FB22572C4569ACFD42E4 /* libRNGestureHandler.a */; };
 		856F824FCEF4428680083A7D /* libRNGestureHandler-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 56EE8B732D9941DC835AFDDC /* libRNGestureHandler-tvOS.a */; };
+		2EE30CB48D644544AB30432F /* stibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AB8EDE8F5F39446EA532F8E1 /* stibold.ttf */; };
+		8E5312D5A60D429AAD7C58F9 /* Potra.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E57D9119712341EE9E41D76E /* Potra.ttf */; };
+		6342B49194C9437387AD7FEE /* Wanderlust.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90FE59D3BCDB41D09F95250D /* Wanderlust.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -351,6 +354,9 @@
 		F289011FB4884ECFADD60BBE /* RNGestureHandler.xcodeproj */ = {isa = PBXFileReference; name = "RNGestureHandler.xcodeproj"; path = "../node_modules/react-native-gesture-handler/ios/RNGestureHandler.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		7544FB22572C4569ACFD42E4 /* libRNGestureHandler.a */ = {isa = PBXFileReference; name = "libRNGestureHandler.a"; path = "libRNGestureHandler.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 		56EE8B732D9941DC835AFDDC /* libRNGestureHandler-tvOS.a */ = {isa = PBXFileReference; name = "libRNGestureHandler-tvOS.a"; path = "libRNGestureHandler-tvOS.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		AB8EDE8F5F39446EA532F8E1 /* stibold.ttf */ = {isa = PBXFileReference; name = "stibold.ttf"; path = "../assets/fonts/stibold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E57D9119712341EE9E41D76E /* Potra.ttf */ = {isa = PBXFileReference; name = "Potra.ttf"; path = "../assets/fonts/Potra.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		90FE59D3BCDB41D09F95250D /* Wanderlust.ttf */ = {isa = PBXFileReference; name = "Wanderlust.ttf"; path = "../assets/fonts/Wanderlust.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -592,6 +598,7 @@
 				00E356EF1AD99517003FC87E /* CIndrataTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
+				27AA474E4FA84ADD8721AAEB /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -617,6 +624,17 @@
 			);
 			name = Products;
 			sourceTree = "<group>";
+		};
+		27AA474E4FA84ADD8721AAEB /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				AB8EDE8F5F39446EA532F8E1 /* stibold.ttf */,
+				E57D9119712341EE9E41D76E /* Potra.ttf */,
+				90FE59D3BCDB41D09F95250D /* Wanderlust.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -1064,6 +1082,9 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				2EE30CB48D644544AB30432F /* stibold.ttf in Resources */,
+				8E5312D5A60D429AAD7C58F9 /* Potra.ttf in Resources */,
+				6342B49194C9437387AD7FEE /* Wanderlust.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

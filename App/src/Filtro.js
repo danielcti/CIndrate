@@ -12,9 +12,11 @@ export default class Filtro extends Component {
         },
         headerTintColor: '#fff',
         headerTitleStyle: {
-          fontWeight: 'bold',
-          flexGrow:1,
-          alignSelf:'center',
+            fontWeight: 'normal',
+            flexGrow:1,
+            alignSelf:'center',
+            fontFamily: 'Potra',
+            fontSize: 34
         },
       };
        
