@@ -5,7 +5,7 @@ import { View, Text, FlatList, StyleSheet, TouchableOpacity} from 'react-native'
 
 export default class Home extends Component {
     static navigationOptions = {
-        title: 'CIndrata',
+        title: 'CIndrate',
         headerStyle: {
           backgroundColor: '#f4511e',
         },
@@ -60,7 +60,7 @@ export default class Home extends Component {
             contentContainerStyle={styles.list}
             data={this.state.data}
             renderItem={this.renderItem}
-            keyExtractor={item => item.id}
+            keyExtractor = { (item, index) => index.toString() }
             />
         </View>
 

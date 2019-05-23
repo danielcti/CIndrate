@@ -6,7 +6,7 @@ import { View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 
 export default class Filtro extends Component {
     static navigationOptions = {
-        title: 'CIndrata',
+        title: 'CIndrate',
         headerStyle: {
           backgroundColor: '#f4511e',
         },
