@@ -35,14 +35,14 @@ export default class Home extends Component {
 		
 	onPress = (data) => {
     // ir para a pagina do filtro escolhido
-        console.log(data)
+        // console.log(data)
         const id = data.id
         this.props.navigation.navigate('Filtro',this.state.data[id]) //passa como parametro o id do filtro
     }
 
   renderItem = ({ item }) => (
     <View style={styles.listItem}>
-      <Text>Bloco {item.bloco} - Andar {item.andar}: {item.nivelAgua}%</Text>
+      <Text style={styles.textoFiltro}>Bloco {item.bloco} - Andar {item.andar}: {item.nivelAgua}%</Text>
       {item.solicitou && <Text style={styles.trocaSolicitada}> Troca solicitada</Text>}
         <TouchableOpacity
             style={styles.button}
@@ -78,9 +78,11 @@ const styles = StyleSheet.create({
         marginTop: 10,
         padding: 20,
         flexDirection: 'row',
+        borderRadius: 5,
     },
     info:{
         fontSize:30,
+        marginTop: 5
     },
     troca:{
         fontSize:20,
@@ -90,7 +92,8 @@ const styles = StyleSheet.create({
         position: 'absolute',
         right: 30
     },
-    trocaSolicitada: {
-        // flexDirection: 'column',
-}
+    textoFiltro: {
+        fontWeight: 'bold',
+        fontSize: 18,
+    }
 });
