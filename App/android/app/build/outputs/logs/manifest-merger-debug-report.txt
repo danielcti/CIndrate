@@ -5,6 +5,7 @@ INJECTED from /home/dpc2/Documentos/CIndrate/App/android/app/src/main/AndroidMan
 INJECTED from /home/dpc2/Documentos/CIndrate/App/android/app/src/main/AndroidManifest.xml:1:1-26:12
 INJECTED from /home/dpc2/Documentos/CIndrate/App/android/app/src/main/AndroidManifest.xml:1:1-26:12
 MERGED from /home/dpc2/Documentos/CIndrate/App/android/app/src/main/AndroidManifest.xml:1:1-26:12
+MERGED from [:react-native-vector-icons] /home/dpc2/Documentos/CIndrate/App/node_modules/react-native-vector-icons/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
 MERGED from [:react-native-gesture-handler] /home/dpc2/Documentos/CIndrate/App/node_modules/react-native-gesture-handler/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
 MERGED from [com.facebook.react:react-native:0.59.8] /home/dpc2/.gradle/caches/transforms-1/files-1.1/react-native-0.59.8.aar/fa75f8a51874234cb5c44db8a91dd895/AndroidManifest.xml:2:1-13:12
 MERGED from [com.android.support:appcompat-v7:28.0.0] /home/dpc2/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/9f032086321374a80fcb0c13d8023d22/AndroidManifest.xml:17:1-22:12
@@ -130,6 +131,8 @@ uses-sdk
 INJECTED from /home/dpc2/Documentos/CIndrate/App/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/dpc2/Documentos/CIndrate/App/android/app/src/main/AndroidManifest.xml
 INJECTED from /home/dpc2/Documentos/CIndrate/App/android/app/src/main/AndroidManifest.xml
+MERGED from [:react-native-vector-icons] /home/dpc2/Documentos/CIndrate/App/node_modules/react-native-vector-icons/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-vector-icons] /home/dpc2/Documentos/CIndrate/App/node_modules/react-native-vector-icons/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-gesture-handler] /home/dpc2/Documentos/CIndrate/App/node_modules/react-native-gesture-handler/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-gesture-handler] /home/dpc2/Documentos/CIndrate/App/node_modules/react-native-gesture-handler/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [com.facebook.react:react-native:0.59.8] /home/dpc2/.gradle/caches/transforms-1/files-1.1/react-native-0.59.8.aar/fa75f8a51874234cb5c44db8a91dd895/AndroidManifest.xml:7:5-9:41

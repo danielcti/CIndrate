@@ -1,9 +1,10 @@
 import { createStackNavigator, createAppContainer } from "react-navigation";
-import Home from './Home'
-import Filtro from './Filtro'
+import Home from './screens/Home/Home'
+import Filtro from './screens/Filtro/Filtro'
+import LoginFuncionario from './screens/LoginFuncionario/LoginFuncionario'
 
 const AppNavigator = createStackNavigator({
-    Home, Filtro
+    Home, Filtro,LoginFuncionario
 },
 {
     headerLayoutPreset: 'center' ,

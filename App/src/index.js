@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import AppContainer from './Routes'
+import Routes from './Routes'
 
 export default class App extends Component{
     render(){
         return(
-            <AppContainer></AppContainer>
+            <Routes></Routes>
         )
     }
 }
