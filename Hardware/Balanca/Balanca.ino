@@ -13,13 +13,10 @@
  
 HX711 balanca;                // define instancia balança HX711
  
-float calibration_factor = 42130;   // fator de calibração aferido na Calibraçao 
-float currentWeight = 0.0;
-float emptyWeight = 14.0;
-float filledWeight = 34.0;
-float limiar = 0.5;
+float calibration_factor = 4900;   // fator de calibração aferido na Calibraçao 
  
-void setup() {
+void setup()
+{
   Serial.begin(9600);
   balanca.begin(DOUT, CLK);                          // inicializa a balança
   Serial.println("Balança com HX711 - celula de carga 50 Kg"); 
@@ -29,26 +26,16 @@ void setup() {
 }
  
 void loop() {
-  currentWeight = balanca.get_units();
-  
-  Serial.print("Peso: ");   // imprime no monitor serial
-  Serial.print(currentWeight, 3);   // imprime peso na balança com 3 casas decimais 
-  Serial.println(" kg");   // imprime no monitor serial 
-
-  if(currentWeight - limiar <= emptyWeight) {
-    Serial.println("empty\n");
-  }
-
-  Serial.println(currentWeight/filledWeight);
-  
-  delay(500) ;   // atraso de 0,5 segundos 
+  Serial.println(balanca.get_units(10), 3);
   
   if (Serial.available()) {   // se a serial estiver disponivel
-     char temp = Serial.read();   // le carcter da serial 
-   
-     if (temp == 't' || temp == 'T') {  // se pressionar t ou T
-        balanca.tare();   // zera a balança
-        Serial.println(" Balança zerada");   // imprime no monitor serial
-     }
+  
+   char temp = Serial.read();   // le carcter da serial 
+   if (temp == 't' || temp == 'T') {  // se pressionar t ou T
+    Serial.println();   // salta uma linha
+    balanca.tare();   // zera a Balança
+    Serial.println(balanca.get_units(5), 3);
+    Serial.println(" Balança zerada");   // imprime no monitor serial
+   }
   }
 }
