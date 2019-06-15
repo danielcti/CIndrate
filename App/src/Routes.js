@@ -4,7 +4,7 @@ import Filtro from './screens/Filtro/Filtro'
 import LoginFuncionario from './screens/LoginFuncionario/LoginFuncionario'
 
 const AppNavigator = createStackNavigator({
-    Home, Filtro,LoginFuncionario
+    Home, Filtro, LoginFuncionario
 },
 {
     headerLayoutPreset: 'center' ,
