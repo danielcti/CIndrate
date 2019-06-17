@@ -7,7 +7,6 @@ const FiltroSchema = new mongoose.Schema({
   nivel: Number,
   trocaSolicitada: Boolean,
   trocaAceita: Boolean,
-  trocaEfetuada: Boolean,
 }, {
   timestamps: true,
 });

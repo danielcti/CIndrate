@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/dpc2/Documentos/CIndrate/App/frontend/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-en-rIN/values-en-rIN.xml",
+            "outputFile": "/home/dpc2/Área de Trabalho/CIndrate/App/frontend/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-en-rIN/values-en-rIN.xml",
             "map": [
                 {
                     "source": "/home/dpc2/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/9f032086321374a80fcb0c13d8023d22/res/values-en-rIN/values-en-rIN.xml",

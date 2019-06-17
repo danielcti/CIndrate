@@ -10,7 +10,6 @@ module.exports = {
         const { bloco, andar, descricao, nivel } = req.body
         const trocaSolicitada = false
         const trocaAceita = false
-        const trocaEfetuada = false
 
         const filtro = await Filtro.create({
             bloco,
@@ -19,7 +18,6 @@ module.exports = {
             nivel,
             trocaSolicitada,
             trocaAceita,
-            trocaEfetuada,
         })
 
         req.io.emit('filtro', filtro)

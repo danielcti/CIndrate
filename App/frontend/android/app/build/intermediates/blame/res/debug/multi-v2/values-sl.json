@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/dpc2/Documentos/CIndrate/App/frontend/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sl/values-sl.xml",
+            "outputFile": "/home/dpc2/Área de Trabalho/CIndrate/App/frontend/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sl/values-sl.xml",
             "map": [
                 {
                     "source": "/home/dpc2/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/31011375be05104bbcadb2758f7822f1/res/values-sl/values-sl.xml",

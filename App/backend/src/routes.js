@@ -13,4 +13,6 @@ routes.post('/filtros/:id/solicita', TrocaController.solicitaTroca)
 
 routes.post('/filtros/:id/aceita', TrocaController.aceitaTroca)
 
+routes.post('/filtros/:id/efetua', TrocaController.efetuaTroca)
+
 module.exports = routes

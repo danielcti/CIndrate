@@ -23,4 +23,16 @@ module.exports = {
 
         return res.json(filtro)
     },
+    async efetuaTroca(req,res){
+        const filtro = await Filtro.findById(req.params.id);
+
+        filtro.trocaAceita = false
+        filtro.trocaSolicitada = false
+
+        await filtro.save()
+
+        req.io.emit('efetua', filtro)
+
+        return res.json(filtro)
+    },
 }
