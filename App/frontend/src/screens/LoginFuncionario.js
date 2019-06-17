@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { View, Text, StyleSheet, TouchableOpacity, TextInput, Alert} from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, TextInput, Alert, AsyncStorage} from 'react-native';
 
 export default class Filtro extends Component {
     static navigationOptions = {
@@ -28,11 +28,46 @@ export default class Filtro extends Component {
     };
   }
 
+  async componentDidMount(){
+    const isLoggedIn = await this._retrieveData()
+    console.log(isLoggedIn)
+    if(isLoggedIn === 'false'){
+        this.props.navigation.navigate('Home', {isLoggedIn: false})
+    }else if(isLoggedIn === 'true'){
+        this.props.navigation.navigate('Home', {isLoggedIn: true})
+    }
+  }
+
+  _retrieveData = async () => {
+    try {
+        const value = await AsyncStorage.getItem('isLoggedIn');
+        if (value !== null) {
+        // We have data!!
+        // console.log(value);
+        return value
+        }
+    } catch (error) {
+        console.log('erro pegando')
+        // Error retrieving data
+    }
+};
+
+_storeData = async (isLoggedIn) => {
+    try {
+      await AsyncStorage.setItem('isLoggedIn', isLoggedIn);
+    //   console.log('salvando')
+    } catch (error) {
+        console.log(error)
+      // Error saving data
+    }
+  };
+
   handleLogin = filtro => {
     console.log(`login: ${this.state.login}`)
     console.log(`password: ${this.state.password}`)
     if(this.matchLogin(this.state.login,this.state.password)){
         console.log('login bateu')
+        this._storeData('true')
         this.props.navigation.replace('Home', {isLoggedIn: true})
     }else{
         this.setState({password: ''})
@@ -48,10 +83,11 @@ export default class Filtro extends Component {
   }
 
   matchLogin = (login,password) => {
-    return login === 'abc' && password === '123'
+    return login === 'admin' && password === 'admin'
   }
 
   handleNoLogin = () => {
+      this._storeData('false')
       this.props.navigation.replace('Home', {isLoggedIn: false})
   }
 
@@ -66,7 +102,6 @@ export default class Filtro extends Component {
             value={this.state.login}
             placeholder='login'
             autoCapitalize='none'
-            autoFocus='true'
         />
         <TextInput
             style= {styles.inputStyle}

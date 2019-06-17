@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, FlatList, StyleSheet, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome'
-import io from 'socket.io-client'
+// import io from 'socket.io-client'
 
 import api from '../services/api'
 
@@ -42,50 +42,51 @@ export default class Home extends Component {
       filtros: [],
       isLoggedIn: false
   };
+  
   }
 
   async componentDidMount(){
-    this.registerSocket();
+    // this.registerSocket();
 
     const response = await api.get('filtros');
 
     const isLoggedIn = this.props.navigation.state.params.isLoggedIn
 
     this.setState({ filtros: response.data, isLoggedIn })
-	}
-	
-	registerSocket = () => {
-		const socket = io('http://192.168.0.114:3333')
+    }
+    
+// 	registerSocket = () => {
+// 		const socket = io('http://192.168.0.114:3333')
 
-		socket.on('filtro', newFiltro => {
-				this.setState({ filtros: [newFiltro, ... this.state.filtros] })
-		})
+// 		socket.on('filtro', newFiltro => {
+// 				this.setState({ filtros: [newFiltro, ... this.state.filtros] })
+// 		})
 
-		socket.on('solicita', filtroSolicitado => {
-				this.setState({
-						filtros: this.state.filtros.map(filtro => (
-								filtro._id === filtroSolicitado._id ? filtroSolicitado : filtro
-						))
-				})
-        })
+// 		socket.on('solicita', filtroSolicitado => {
+// 				this.setState({
+// 						filtros: this.state.filtros.map(filtro => (
+// 								filtro._id === filtroSolicitado._id ? filtroSolicitado : filtro
+// 						))
+// 				})
+//         })
         
-        socket.on('aceita', filtroAceito => {
-            this.setState({
-                    filtros: this.state.filtros.map(filtro => (
-                            filtro._id === filtroAceito._id ? filtroAceito : filtro
-                    ))
-            })
-        })
+//         socket.on('aceita', filtroAceito => {
+//             this.setState({
+//                     filtros: this.state.filtros.map(filtro => (
+//                             filtro._id === filtroAceito._id ? filtroAceito : filtro
+//                     ))
+//             })
+//         })
 
-        socket.on('efetua', filtroTrocado => {
-            this.setState({
-                    filtros: this.state.filtros.map(filtro => (
-                            filtro._id === filtroTrocado._id ? filtroTrocado : filtro
-                    ))
-            })
-        })
+//         socket.on('efetua', filtroTrocado => {
+//             this.setState({
+//                     filtros: this.state.filtros.map(filtro => (
+//                             filtro._id === filtroTrocado._id ? filtroTrocado : filtro
+//                     ))
+//             })
+//         })
 
-}
+// }
 		
 	// ir para a pagina do filtro escolhido
 	handleInfo = (id) => { 
@@ -97,20 +98,23 @@ export default class Home extends Component {
     }
 
   renderItem = ({ item }) => (
-    // <View style={styles.listItem}>
         <TouchableOpacity
             style={styles.listItem}
             onPress={() => this.handleInfo(item._id)}>
-      <Text style={styles.textoFiltro}>Bloco {item.bloco} - Andar {item.andar}: {item.nivel}%</Text>
-      {item.trocaSolicitada && !item.trocaAceita && <Text style={styles.trocaSolicitada}> Troca solicitada</Text>}
-      {item.trocaSolicitada && item.trocaAceita && <Text style={styles.trocaAceita}> Funcionario a caminho</Text>}
 
-            {/* <View style={styles.info}>
-                <Icon name="info" size={30} color="#900" />
-            </View> */}
-            {/* <Text style={styles.info}>+</Text> */}
+            <Text style={styles.textoFiltro}>Bloco {item.bloco} - Andar {item.andar}: {item.nivel}%</Text>
+
+            {item.trocaSolicitada && !item.trocaAceita && 
+            <Text style={styles.trocaSolicitada}> 
+                Troca solicitada
+            </Text>}
+
+            {item.trocaSolicitada && item.trocaAceita && 
+            <Text style={styles.trocaAceita}>
+                Funcionario a caminho
+            </Text>}
+
         </TouchableOpacity>
-    // </View>
   );
 
   render() {
